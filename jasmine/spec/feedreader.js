@@ -56,6 +56,8 @@ $(function() {
         /* This is a test that ensures the menu element is
          * hidden by default.
          */
+
+        // hasClass() was added after reviewer suggestion
         it('slide menu hidden by default', function() {
             expect($('body').hasClass('menu-hidden')).toBe(true);
         }); // if this returns null, then there was no .menu-hidden class to be selected
@@ -98,6 +100,8 @@ $(function() {
         var firstFeed,
             secondFeed;
 
+        // The following solution was mainly composed from a Udacity forum,
+        // https://discussions.udacity.com/t/new-feed-selection-question/16274/7
         beforeEach(function(done) {
             loadFeed(1, function() {
                firstFeed = $('.feed').html();
