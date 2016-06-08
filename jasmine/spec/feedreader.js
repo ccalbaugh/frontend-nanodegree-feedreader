@@ -57,7 +57,7 @@ $(function() {
          * hidden by default.
          */
         it('slide menu hidden by default', function() {
-            expect($('.menu-hidden')).toBeDefined();
+            expect($('body').hasClass('menu-hidden')).toBe(true);
         }); // if this returns null, then there was no .menu-hidden class to be selected
 
 
@@ -85,7 +85,7 @@ $(function() {
 
          it('loadFeed populates atleast one entry', function(done) {
             var numOfEntries = $('.feed .entry').length;
-            expect(numOfEntries).toBeGreaterTnah(0);
+            expect(numOfEntries).toBeGreaterThan(0);
             done();
          });
     });
