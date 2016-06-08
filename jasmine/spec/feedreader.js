@@ -99,14 +99,14 @@ $(function() {
             secondFeed;
 
         beforeEach(function(done) {
-            loadFeed(0, function() {
-                firstFeed = $('.feed').html();
-                done();
+            loadFeed(1, function() {
+               firstFeed = $('.feed').html();
+               done();
             });
         });
 
         it('content changes', function(done) {
-            loadFeed(1, function() {
+            loadFeed(0, function() {
                 secondFeed = $('.feed').html();
                 expect(secondFeed).not.toEqual(firstFeed);
                 done();

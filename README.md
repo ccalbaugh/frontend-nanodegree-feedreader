@@ -1,6 +1,6 @@
 # Frontend-nanodegree-feedreader
 
-This project is a feedreader for different frontend programming development blogs
+This project is a feedreader for different frontend development blogs
 
 # Usage
 
