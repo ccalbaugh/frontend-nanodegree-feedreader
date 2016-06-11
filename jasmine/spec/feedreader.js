@@ -69,9 +69,11 @@ $(function() {
           * clicked and does it hide when clicked again.
           */
         it('slide menu changes visibility', function() {
-            expect($('.menu-icon-link').on('click', function() {
-                $('body').toggleClass('menu-hidden');
-            })).toBeDefined();
+            $('.menu-icon-link').trigger('click');
+            expect($('body').hasClass('menu-hidden')).toBe(false);
+
+            $('.menu-icon-link').trigger('click');
+            expect($('body').hasClass('menu-hidden')).toBe(true);
         });
     });
 
@@ -81,15 +83,15 @@ $(function() {
          * function is called and completes its work, there is at least
          * a single .entry element within the .feed container.
          */
-         beforeEach(function(done) {
+        beforeEach(function(done) {
             loadFeed(0, done);
-         });
+        });
 
-         it('loadFeed populates atleast one entry', function(done) {
+        it('loadFeed populates atleast one entry', function(done) {
             var numOfEntries = $('.feed .entry').length;
             expect(numOfEntries).toBeGreaterThan(0);
             done();
-         });
+        });
     });
 
     describe('New Feed Selection', function() {
